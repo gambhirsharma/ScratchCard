@@ -68,6 +68,9 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scratch-top {
@@ -84,8 +87,7 @@ body {
 
 .scratch-text {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  aspect-ratio: 3/1;
   background: #fff;
   color: #111;
   font-size: 2rem;
@@ -116,6 +118,10 @@ body {
   justify-content: center;
 
   transition: transform 0.1s linear;
+
+  &:hover{
+    cursor: grab;
+  }
 
   &::after {
     content: "";
@@ -153,6 +159,7 @@ body {
 
 .coin.transformed {
   transform: rotateY(-40deg) rotateX(20deg);
+  cursor: grabbing;
 }
 
 

@@ -1,6 +1,8 @@
 import React from 'react'
-
-const Coin: React.FC = () => {
+interface CoinProps {
+  setIsMouseDown: (isMouseDown: boolean) => void;
+}
+const Coin: React.FC<CoinProps> = ({ setIsMouseDown }) => {
   const [position, setPosition] = React.useState({ x: 950, y: 500 })
   const coinRef = React.useRef<HTMLDivElement>(null)
 
@@ -22,19 +24,21 @@ const Coin: React.FC = () => {
   const mouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (coinRef.current !== null) {
       coinRef.current.classList.add('transformed');
-      console.log(`Position: ${e.clientX}, ${e.clientY}`);
+      // console.log(`Position: ${e.clientX}, ${e.clientY}`);
       mouseStartPos.x = e.clientX;
       mouseStartPos.y = e.clientY;
 
       document.addEventListener("mousemove", mouseMove);
       document.addEventListener("mouseup", mouseUp);
+      setIsMouseDown(true);
+
     }
   };
 
   // mouseMove
   const mouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 
-    console.log(`mouseMove: ${e.clientX}, ${e.clientY}`);
+    // console.log(`mouseMove: ${e.clientX}, ${e.clientY}`);
     //1 - Calculate move direction
     let mouseMoveDir = {
       x: mouseStartPos.x - e.clientX,
@@ -52,13 +56,14 @@ const Coin: React.FC = () => {
   }
   // mouseUp
   const mouseUp = () => {
-    console.log(`mouseUP`)
-    if(coinRef.current !== null) {
-    coinRef.current.classList.remove('transformed');
+    // console.log(`mouseUP`)
+    if (coinRef.current !== null) {
+      coinRef.current.classList.remove('transformed');
     }
     document.removeEventListener("mousemove", mouseMove);
     document.removeEventListener("mouseup", mouseUp);
 
+      setIsMouseDown(false);
     // const newPosition = setNewOffset(coinRef); //{x,y}
     // saveData("position", newPosition);
   }

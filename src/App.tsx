@@ -1,4 +1,5 @@
-import CoinScratch from "./page/CoinScratch"
+import CoinScratch from "./page/CoinScrath"
+
 
 function App() {
 
