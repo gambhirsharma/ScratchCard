@@ -35,7 +35,7 @@ const ScratchPath: React.FC<ScratchProps> = ({ width = 400, isMouseDown }) => {
       <Sketch width={600} isMouseDown={isMouseDown} />
       {/* <div className="scratch-text" style={{ display: showText ? "flex" : "none",  }} > */}
       <div className="scratch-text"
-        style={{ width: `${width}px` }}>
+        style={{ width: `${width}px`  }}>
         {randomString}
       </div>
     </div>

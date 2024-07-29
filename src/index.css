@@ -57,7 +57,9 @@ body {
   display: flex;
   place-items: center;
   max-width: 100vw;
-  min-height: 100vh;
+  max-height: 100vh;
+  flex-direction: column;
+  color: #000;
 }
 
 
@@ -119,7 +121,7 @@ body {
 
   transition: transform 0.1s linear;
 
-  &:hover{
+  &:hover {
     cursor: grab;
   }
 
@@ -162,4 +164,28 @@ body {
   cursor: grabbing;
 }
 
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  padding: 20px;
+}
 
+.header {
+  top: 0;
+  display: flex;
+  color: grey;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  color: grey;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+.footer svg{
+  margin: 0px 20px; 
+}
