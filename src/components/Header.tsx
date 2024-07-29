@@ -1,5 +1,5 @@
 import '../index.css'
-import { RotateCw, Volume2, VolumeX } from 'lucide-react'
+import { Volume2, VolumeX } from 'lucide-react'
 import React from 'react'
 
 function Header() {

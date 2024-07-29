@@ -1,6 +1,5 @@
 import { Github, Twitter } from 'lucide-react'
 import '../index.css'
-import React from 'react'
 
 function Footer() {
   return (

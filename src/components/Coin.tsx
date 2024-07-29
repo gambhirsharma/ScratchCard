@@ -28,6 +28,7 @@ const Coin: React.FC<CoinProps> = ({ setIsMouseDown }) => {
       mouseStartPos.x = e.clientX;
       mouseStartPos.y = e.clientY;
 
+      // @ts-ignore
       document.addEventListener("mousemove", mouseMove);
       document.addEventListener("mouseup", mouseUp);
       setIsMouseDown(true);
@@ -51,6 +52,7 @@ const Coin: React.FC<CoinProps> = ({ setIsMouseDown }) => {
 
     //3 - Update card top and left position.
     const newPosition = setNewOffset(coinRef, mouseMoveDir);
+    // @ts-ignore
     setPosition(newPosition);
 
   }
@@ -60,6 +62,7 @@ const Coin: React.FC<CoinProps> = ({ setIsMouseDown }) => {
     if (coinRef.current !== null) {
       coinRef.current.classList.remove('transformed');
     }
+    // @ts-ignore
     document.removeEventListener("mousemove", mouseMove);
     document.removeEventListener("mouseup", mouseUp);
 
