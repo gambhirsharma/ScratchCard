@@ -1,0 +1,23 @@
+I am getting this error while trying to implement the p5js sound module in React/TypeScript.
+
+```
+import p5 from 'p5';
+import "p5/lib/addons/p5.sound"
+
+const Sketch = () => {
+
+	useEffect(()=>{
+			const sketch (p:p5){
+			p.preload = () => {
+			  sound = p.loadSound("../../public/sound/sound.mp3");
+			    };
+			p.setup() =>{...}
+			p.draw = () =>{..
+			    sound.play();
+			..}
+		}
+			const myp5 = new p5(sketch);
+			},[])
+	return (...)
+}
+```
